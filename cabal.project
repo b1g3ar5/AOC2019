@@ -1,0 +1,13 @@
+packages:
+  .
+  ../../../Clever
+  ../../../Useful
+
+-- Pin versions to the Stackage snapshot previously used by stack.yaml
+import: https://www.stackage.org/lts-24.58/cabal.config
+
+allow-newer: all
+
+-- Build this package's test suite by default (not Clever/Useful's)
+package AOC2019
+  tests: True

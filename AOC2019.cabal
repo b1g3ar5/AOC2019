@@ -1,0 +1,129 @@
+cabal-version:      3.0
+name:               AOC2019
+version:            0.1.0.0
+description:        Advent of Code 2019 solutions
+author:             Nick Straw
+maintainer:         nick@broxholme.com
+copyright:          2019 N J Straw
+license:            BSD-3-Clause
+license-file:       LICENSE
+build-type:         Simple
+extra-doc-files:
+    README.md
+    ChangeLog.md
+
+common shared
+  default-language: GHC2021
+  ghc-options:      -Wall
+  build-depends:    base >=4.7 && <5
+
+library
+  import:           shared
+  hs-source-dirs:   src
+  ghc-options:      -O2
+  exposed-modules:
+      Computer
+      Day1
+      Day10
+      Day11
+      Day12
+      Day13
+      Day14
+      Day15
+      Day16
+      Day17
+      Day18
+      Day18b
+      Day19
+      Day2
+      Day20
+      Day21
+      Day22
+      Day23
+      Day24
+      Day25
+      Day3
+      Day4
+      Day5
+      Day6
+      Day7
+      Day8
+      Day9
+      Enumeration
+      Glover
+      Graph
+      Grid
+      HeapIndexed
+      Instruction
+      Int80
+      Intcode
+      Kleene
+      Kleene2
+      Lib
+      MemoOld
+      MInstruction
+      MTape
+      Opcode
+      Path
+      Point
+      Pointer
+      Queue
+      Search
+      State
+      Tape
+      Tree
+      Utils
+  build-depends:
+      adjunctions
+    , ansi-terminal
+    , arithmoi
+    , array
+    , bimap
+    , Clever
+    , comonad
+    , containers
+    , distributive
+    , fgl
+    , finite-typelits
+    , hashable
+    , lens
+    , MemoTrie
+    , monad-loops
+    , mtl
+    , parallel
+    , pointedlist
+    , pqueue
+    , recursion-schemes
+    , search-algorithms
+    , simple-enumeration
+    , split
+    , tasty
+    , tasty-hunit
+    , tasty-quickcheck
+    , timeit
+    , unordered-containers
+    , Useful
+    , vector
+    , vector-space
+
+executable AOC2019-exe
+  import:           shared
+  hs-source-dirs:   app
+  main-is:          Main.hs
+  ghc-options:      -O2 -threaded -rtsopts -with-rtsopts=-N
+  build-depends:    AOC2019
+
+test-suite AOC2019-test
+  import:           shared
+  type:             exitcode-stdio-1.0
+  hs-source-dirs:   test
+  main-is:          Spec.hs
+  other-modules:    Day18Tests
+  ghc-options:      -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      AOC2019
+    , comonad
+    , split
+    , tasty
+    , tasty-hunit
+    , tasty-quickcheck

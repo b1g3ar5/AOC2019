@@ -1,0 +1,87 @@
+name:                AOC2019
+version:             0.1.0.0
+github:              "githubuser/AOC2019"
+license:             BSD3
+author:              "Author name here"
+maintainer:          "example@example.com"
+copyright:           "2019 Author name here"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/AOC2019#readme>
+
+dependencies:
+- adjunctions
+- ansi-terminal
+- arithmoi
+- array
+- base >= 4.7 && < 5
+- bimap
+- Clever
+- comonad
+- containers
+- distributive
+- fgl
+- finite-typelits
+- hashable
+- lens
+- MemoTrie
+- monad-loops
+- mtl
+- parallel
+- pointedlist
+- pqueue
+- recursion-schemes
+- search-algorithms
+- simple-enumeration
+- split
+- tasty
+- tasty-quickcheck
+- tasty-hunit
+- timeit
+- unordered-containers
+- Useful
+- vector
+#- sized-grid
+- vector-space
+
+
+library:
+  source-dirs: src
+  ghc-options:
+  - -O2
+  - -Wall
+  
+executables:
+  AOC2019-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    - -O2
+    - -Wall
+
+    dependencies:
+    - AOC2019
+
+tests:
+  AOC2019-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - AOC2019
